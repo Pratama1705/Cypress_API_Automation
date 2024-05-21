@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress::WeatherbitAPI": "npx cypress run --spec cypress\\e2e\\weatherbitAPI\\*.cy.js",
+    "cypress::DummyCartsAPI": "npx cypress run --spec cypress\\e2e\\dummyCartAPI\\*.cy.js"
   },
   "author": "",
   "license": "ISC",
