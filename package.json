@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "cypress::WeatherbitAPIJenkins": "npx cypress run --spec cypress\\e2e\\weatherbitAPI\\*.cy.js --env API_KEY_BASE=%Weatherbit_Base_API%",
+    "cypress::DummyCartsAPIJenkins": "npx cypress run --spec cypress\\e2e\\dummyCartAPI\\*.cy.js",
     "cypress::WeatherbitAPI": "npx cypress run --spec cypress\\e2e\\weatherbitAPI\\*.cy.js",
     "cypress::DummyCartsAPI": "npx cypress run --spec cypress\\e2e\\dummyCartAPI\\*.cy.js"
   },
