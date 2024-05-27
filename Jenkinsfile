@@ -44,6 +44,16 @@ pipeline {
                 }
             }
         }
+
+        stage('Generate Reports') {
+            steps {
+                script {
+                    bat "npm run generate-report"
+
+                    bat "npm run merge-report"
+                }
+            }
+        }
     }
 
     post {
@@ -52,7 +62,7 @@ pipeline {
                 allowMissing: false, 
                 alwaysLinkToLastBuild: false, 
                 keepAll: true, 
-                reportDir: 'cypress/report', 
+                reportDir: 'public', 
                 reportFiles: 'index.html', 
                 reportName: 'Automation Testing Report', 
                 reportTitles: '${params.API_SPEC} Testing Report', 
