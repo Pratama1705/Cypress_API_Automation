@@ -70,7 +70,7 @@ pipeline {
                 reportFiles: 'index.html', 
                 reportName: 'Automation Testing Report', 
                 reportTitles: '', 
-                useWrapperFileDirectly: true
+                useWrapperFileDirectly: false
             ])
         }
     }
