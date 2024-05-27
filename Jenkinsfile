@@ -44,20 +44,16 @@ pipeline {
                 }
             }
         }
-
-        stage('Generate Reports') {
-            steps {
-                script {
-                    bat "npm run generate-report"
-
-                    bat "npm run merge-report"
-                }
-            }
-        }
     }
 
     post {
         always {
+            script {
+                bat "npm run generate-report"
+
+                bat "npm run merge-report"
+            }
+
             publishHTML([
                 allowMissing: false, 
                 alwaysLinkToLastBuild: false, 
