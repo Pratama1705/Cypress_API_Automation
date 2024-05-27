@@ -25,12 +25,12 @@ pipeline {
         stage('Run Tests'){
             steps {
                 script {
-                    echo "First : ${API_SPEC}"
-
-                    def kindOfSpec = '${API_SPEC}'
+                    echo 'API SPEC : ${API_SPEC}'
                     
-                    echo "Second : ${API_SPEC}"
-
+                    def kindOfSpec = params.API_SPEC
+                    
+                    echo kindOfSpec
+                    
                     // Logical Expression
                     if (kindOfSpec == 'All API') {
                         // Run All API
