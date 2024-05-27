@@ -22,6 +22,14 @@ pipeline {
                 }
             }
         }
+        stage('Delete Old Reports') {
+            steps {
+                script {
+                    // Delete old reports directory
+                    bat "rmdir /S /Q \"cypress\\report\""
+                }
+            }
+        }
         stage('Run Tests'){
             steps {
                 script {
@@ -61,7 +69,7 @@ pipeline {
                 reportDir: 'public', 
                 reportFiles: 'index.html', 
                 reportName: 'Automation Testing Report', 
-                reportTitles: '${params.API_SPEC} Testing Report', 
+                reportTitles: '', 
                 useWrapperFileDirectly: true
             ])
         }
