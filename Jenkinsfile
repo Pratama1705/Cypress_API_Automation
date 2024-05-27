@@ -49,9 +49,9 @@ pipeline {
     post {
         always {
             script {
-                bat "npm run generate-report"
-
                 bat "npm run merge-report"
+
+                bat "npm run generate-report"
             }
 
             publishHTML([
