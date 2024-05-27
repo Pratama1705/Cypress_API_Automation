@@ -62,16 +62,13 @@ pipeline {
                 bat "npm run generate-report"
             }
 
-            // Archive HTML report files as artifacts
-            archiveArtifacts 'public/**'
-
             publishHTML([
                 allowMissing: false, 
                 alwaysLinkToLastBuild: false, 
                 keepAll: false, 
-                reportDir: 'public', 
+                reportDir: 'cypress/report', 
                 reportFiles: 'index.html', 
-                reportName: 'Automation Testing Report', 
+                reportName: 'API Testing Report', 
                 reportTitles: '', 
                 useWrapperFileDirectly: true
             ])
