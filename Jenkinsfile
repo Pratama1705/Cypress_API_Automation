@@ -49,7 +49,7 @@ pipeline {
     post {
         always {
             script {
-                bat "npm run merge-report"
+                bat "npm run merge-reports"
 
                 bat "npm run generate-report"
             }
