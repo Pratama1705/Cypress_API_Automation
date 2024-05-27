@@ -25,11 +25,10 @@ pipeline {
         stage('Run Tests'){
             steps {
                 script {
-                    echo 'API SPEC : ${API_SPEC}'
-                    
                     def kindOfSpec = params.API_SPEC
                     
                     echo kindOfSpec
+                    echo env.WeatherbitAPIKey
                     
                     // Logical Expression
                     if (kindOfSpec == 'All API') {
