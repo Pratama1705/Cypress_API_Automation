@@ -65,8 +65,8 @@ pipeline {
             publishHTML([
                 allowMissing: false, 
                 alwaysLinkToLastBuild: false, 
-                keepAll: false, 
-                reportDir: 'cypress/report', 
+                keepAll: true, 
+                reportDir: 'public', 
                 reportFiles: 'index.html', 
                 reportName: 'API Testing Report', 
                 reportTitles: '', 
