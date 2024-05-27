@@ -62,15 +62,18 @@ pipeline {
                 bat "npm run generate-report"
             }
 
+            // Archive HTML report files as artifacts
+            archiveArtifacts 'public/**'
+
             publishHTML([
                 allowMissing: false, 
                 alwaysLinkToLastBuild: false, 
-                keepAll: true, 
+                keepAll: false, 
                 reportDir: 'public', 
                 reportFiles: 'index.html', 
                 reportName: 'Automation Testing Report', 
                 reportTitles: '', 
-                useWrapperFileDirectly: false
+                useWrapperFileDirectly: true
             ])
         }
     }
