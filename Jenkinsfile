@@ -45,4 +45,19 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            publishHTML([
+                allowMissing: false, 
+                alwaysLinkToLastBuild: false, 
+                keepAll: true, 
+                reportDir: 'cypress/report', 
+                reportFiles: 'index.html', 
+                reportName: 'Automation Testing Report', 
+                reportTitles: '${params.API_SPEC} Testing Report', 
+                useWrapperFileDirectly: true
+            ])
+        }
+    }
 }
