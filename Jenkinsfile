@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     environment {
-        WeatherbitAPIKey = "${env.Weatherbit_Base_API}"
+        WeatherbitAPIKey = "${env.Weatherbit_Base_API}",
+        JAVA_TOOL_OPTIONS = '-Dfile.encoding=UTF-8'
     }
 
     parameters {
