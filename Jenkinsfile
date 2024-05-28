@@ -64,13 +64,13 @@ pipeline {
 
             publishHTML([
                 allowMissing: false, 
-                alwaysLinkToLastBuild: false, 
+                alwaysLinkToLastBuild: true, 
                 keepAll: true, 
                 reportDir: 'public', 
                 reportFiles: 'index.html', 
                 reportName: 'API Testing Report', 
                 reportTitles: '', 
-                useWrapperFileDirectly: false
+                useWrapperFileDirectly: true
             ])
         }
     }
