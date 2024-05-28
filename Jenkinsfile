@@ -41,10 +41,10 @@ pipeline {
                     // Logical Expression
                     if (kindOfSpec == 'All API') {
                         // Run All API
-                        bat "npm run cypress::RunAllAPI --env API_KEY_BASE=${env.WeatherbitAPIKey}"
+                        bat "npm run cypress::RunAllAPI -- --env API_KEY_BASE=${env.WeatherbitAPIKey}"
                     } else if (kindOfSpec == 'Weatherbit API') {
                         // Run Weatherbit API
-                        bat "npm run cypress::WeatherbitAPI --env API_KEY_BASE=${env.WeatherbitAPIKey}"
+                        bat "npm run cypress::WeatherbitAPI -- --env API_KEY_BASE=${env.WeatherbitAPIKey}"
                     } else if (kindOfSpec == 'Cart API') {
                         // Run Cart API
                         bat "npm run cypress::DummyCartsAPI"
